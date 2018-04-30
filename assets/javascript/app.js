@@ -7,10 +7,10 @@ var questionList = [
     "<h2>Question 6</h2><br><p class='wrong'>answer</p><p class='wrong'>answer</p><p class='correct'>answer</p><p class='wrong'>answer</p>",
     ];
 var q = 0;
-var timeLeft = 0;
+var timeLeft = 30;
 var correct = 0;
 var incorrect = 0;
-var unanswered = -1;
+var unanswered = 0;
 var timer;
     function questionPicker(){
         timeLeft = 30;
@@ -36,9 +36,10 @@ var timer;
     }
 
 $("#questions").on("click", "#start", function(){
+    questionPicker()
    // timeLeft = 30;
     //var questionChange = setInterval(timeLeft = 30, questionPicker, 30000);
-  timer = setInterval(decrement , 1000);
+  timer = setInterval( decrement, 1000);
 });
 
 $("#questions").on("click", ".correct", function(){
@@ -48,10 +49,11 @@ $("#questions").on("click", ".correct", function(){
     // else {
     clearInterval(timer);
     correct++;
-    timeLeft = 0;
+    timeLeft = 30;
     $("#questions").html($("<h1>Correct!</h1>"));
-   // questionPicker();
+    //questionPicker();
     $("#time-left").text("Time Remaining: " + timeLeft); 
+    setTimeout(questionPicker, 1000);
     setTimeout(timer = setInterval(decrement , 1000), 1000);
     // }
 });
@@ -63,10 +65,11 @@ $("#questions").on("click", ".wrong", function(){
     // else {
     clearInterval(timer);
     incorrect++;
-    timeLeft = 0;
+    timeLeft = 30;
     //questionPicker();
     $("#questions").html($("<h1>Wrong!</h1>"));
-    $("#time-left").text("Time Remaining: " + timeLeft); 
+    $("#time-left").text("Time Remaining: " + timeLeft);
+    setTimeout(questionPicker, 1000); 
     setTimeout(timer = setInterval(decrement , 1000), 1000);
     // }
 });
