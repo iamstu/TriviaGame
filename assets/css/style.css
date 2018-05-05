@@ -1,11 +1,17 @@
 body, html{
     height: 100%;
+    background-image: url("../images/slender-idea.jpg");
+    background-size: cover;
 }
 
 .content-area{
-    margin: 0 auto;
+    margin: 15px auto 15px auto;
     width: 960px;
     text-align: center;
+    background-image: url("../images/14-wrinkled-paper-6.jpg");
+    color: #181610;
+    height: 95%;
+    font-family: 'Amatic SC', cursive;
 }
 
 p {
@@ -13,7 +19,9 @@ p {
 }
 
 p:hover {
-    background-color: blue;
+    background-color: rgb(31, 26, 26);
+    color: #fff;
+
 }
 
 p:active {
@@ -21,13 +29,40 @@ p:active {
 }
 
 h1{
-    font-size: 38px;
+    font-size: 120px;
 }
 
 h2{
-    font-size: 28px;
+    font-size: 54px;
 }
 
 h3{
     font-size: 24px;
+}
+
+p {
+    font-size: 20px;
+    width: 33%;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 900;
+}
+
+button{
+    background-color: rgb(31, 26, 26);
+    color: #fff;
+    border-width: 0;
+
+}
+
+button:hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+}
+
+img{
+    height: 150px;
+    width: auto;
 }
